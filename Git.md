@@ -115,7 +115,7 @@ Luego crearemos nuestra conexion hacia ese repositorio en particular esto lo har
 Una vez configurado el repositorio remoto al cual subiremos todos nuestros cambios procederemos a pasarlos por los diferentes stages.
 
 * git add "archivo.txt"
-* git commit -m "Agregando primer arvchivo txt"
+* git commit -m "Agregando primer archivo.txt"
 
 Validar nombre de la rama en la que estamos trabajando en este caso la master por loque el push debe ser con ese nombre:
 * git push -u origin master
