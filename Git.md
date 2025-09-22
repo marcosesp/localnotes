@@ -87,7 +87,39 @@ git show     	Shows what was in the change set for a particular commit hash.
 
 --Iniciando proyecto en git
 
-Lo primero es crear un proyecto en git y asignarle un nombre
-Crear la carpeta del proyecto y luego inicalizarla con git init. Esto hara que el proyecto sea utilizado para git
-luego conectamos el proyecto con el repositorio remoto creando una llave ssh que luego adicionaremos en git debido a que el acceso por contraseña esta deshabilitado por defecto.
+- Lo primero es crear un proyecto en git y asignarle un nombre.
+- Crear la carpeta del proyecto y luego inicalizarla con git init. Esto hara que el proyecto sea utilizado para git.
+- Conectamos el proyecto con el repositorio remoto creando una llave ssh que luego adicionaremos en git debido a que el acceso por contraseña esta deshabilitado por defecto.
+
+--Generando la llave ssh
+
+ssh-keygen -t si quieres elegir entre diferentes algoritmos de encriptacion (rsa, ecdsa, dsa) entre otros. Puedes dejarlo como esta y luego copiar la llave publica en el servidor remoto de git
+para poder autenticar por llave.
+
+--Finalizando la configuracion del proyecto
+
+- Luego de haber creado la llave e inicializado el proyecto podemos probar conexion hacia git con:
+* ssh -T git@github.com, deberia salir el mensaje: 
+Hi marcosesp! You've successfully authenticated, but GitHub does not provide shell access.
+
+Nota: Si deseas ver todo el flujo para validar de que tu llave esta siendo utilizada puede adicionar la opcion -v
+* ssh -Tv git@github.com
+
+Si la conexion se establecio correctamente procederemos a crear la conexion hacia el repositorio que acabamos de crear en el servidor en este caso se llama "localnotes"
+primero validaremos que conexiones remotas existen, como es un proyecto nuevo deberia de estar vacio. Esto lo haremos con:
+* git remote -v
+
+Luego crearemos nuestra conexion hacia ese repositorio en particular esto lo haremos configurando lo siguiente:
+* git remote add origin git@github.com:marcosesp/localnotes.git
+
+Una vez configurado el repositorio remoto al cual subiremos todos nuestros cambios procederemos a pasarlos por los diferentes stages.
+
+* git add "archivo.txt"
+* git commit -m "Agregando primer arvchivo txt"
+
+Validar nombre de la rama en la que estamos trabajando en este caso la master por loque el push debe ser con ese nombre:
+* git push -u origin master
+
+Con este proceso acabamos de subir el archivo.txt al repositorio creado localnotes.
+
 
