@@ -122,4 +122,8 @@ Validar nombre de la rama en la que estamos trabajando en este caso la master po
 
 Con este proceso acabamos de subir el archivo.txt al repositorio creado localnotes.
 
+-- trabajando con git
+ * git branch me permite crear un nuevo branch pero para poder cambiar al nuevo branch habria que utilizar git checkout
+
+* git checkout -b "newbranch": Permite crear un nuevo branch y realizar el cambio a ese nuevo branch.
 
