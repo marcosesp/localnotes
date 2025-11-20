@@ -111,6 +111,19 @@ Si la conexion se establecio correctamente procederemos a crear la conexion haci
 primero validaremos que conexiones remotas existen, como es un proyecto nuevo deberia de estar vacio. Esto lo haremos con:
 * git remote -v
 
+Nota importante: si al momento de comenzar a trabajar un proyecto, si se realiza un git clone desde una url de un proyecto, git por defecto agrega el origin como 
+https, que fue como se clono, para poder eliminar o cambiar el origin se pueden realizar de la siguiente forma.
+
+para eliminarlo:
+ * git remote remove origin
+ * git remote rm origin
+
+para cambiarlo:
+ * git remote set-url origin git@github.com:marcosesp/localnotes.git
+
+para adicionar otro origin adicional:
+ * git remote add ssh-origin git@github.com:marcosesp/localnotes.git  
+
 Luego crearemos nuestra conexion hacia ese repositorio en particular esto lo haremos configurando lo siguiente:
 * git remote add origin git@github.com:marcosesp/localnotes.git
 
