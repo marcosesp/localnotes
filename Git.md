@@ -54,12 +54,12 @@ Ejemplo inicial con git config
 
 Entendiendo el flujo de trabajo
 
-- Computador
+- Computador:
 - git add "archivo o carpeta": mueve el archivo modificado al area de Staging. Usado para verificar lo que eventualmente paseromos a nuestro repositorio final.
-- stage
+- stage:
  Etapa intermeda para indicar los cambios que efectuamos que pasaran al repo, una vez revisado aqui podremos en caso de que no queramos pasar cambios devolverlos
-es decir sacarlos de la etapa stage. En caso de que queramos pasarlo todo ya se hara con el commit.
-- commit git commit -m "mensaje": 
+ es decir sacarlos de la etapa stage. En caso de que queramos pasarlo todo ya se hara con el commit.
+- commit: git commit -m "mensaje": 
 Cuando se realiza el git commit, ya en esta etapa los archivos que estan aqui se quitan del estado del staging(estado anterior) y ya con los archivos en este estado
 estamos listo para subirlos a nuestro repositorio (nube).
 - server
@@ -89,11 +89,13 @@ git show     	Shows what was in the change set for a particular commit hash.
 
 - Lo primero es crear un proyecto en git y asignarle un nombre.
 - Crear la carpeta del proyecto y luego inicalizarla con git init. Esto hara que el proyecto sea utilizado para git.
-- Conectamos el proyecto con el repositorio remoto creando una llave ssh que luego adicionaremos en git debido a que el acceso por contraseña esta deshabilitado por defecto.
+- Conectamos el proyecto con el repositorio remoto creando una llave ssh que luego adicionaremos en git debido a que el acceso por contraseña
+  esta deshabilitado por defecto.
 
 --Generando la llave ssh
 
-ssh-keygen -t si quieres elegir entre diferentes algoritmos de encriptacion (rsa, ecdsa, dsa) entre otros. Puedes dejarlo como esta y luego copiar la llave publica en el servidor remoto de git
+ssh-keygen -t si quieres elegir entre diferentes algoritmos de encriptacion (rsa, ecdsa, dsa) entre otros. Puedes dejarlo como esta y luego copiar 
+la llave publica en el servidor remoto de git
 para poder autenticar por llave.
 
 --Finalizando la configuracion del proyecto
@@ -123,7 +125,19 @@ Validar nombre de la rama en la que estamos trabajando en este caso la master po
 Con este proceso acabamos de subir el archivo.txt al repositorio creado localnotes.
 
 -- trabajando con git
- * git branch me permite crear un nuevo branch pero para poder cambiar al nuevo branch habria que utilizar git checkout
+* git branch me permite crear un nuevo branch pero para poder cambiar al nuevo branch habria que utilizar git checkout
 
 * git checkout -b "newbranch": Permite crear un nuevo branch y realizar el cambio a ese nuevo branch.
+
+--Restore, checkout y mas
+
+* restore: git restore sirve par deshacer cambios no confirmados es decir que aun no han sido comitiados en el directorio de trabajo o para restaurar
+archivos desde un commit especifico, desde el staging area o desde otra rama. git restore no modifica commits, solo modifica el working directory o staging
+area.
+
+* git restore archivo.txt
+
+Esto elimina tus cambios no guradados en archivo.txt y lo deja tal como estaba en el head.
+
+
 
