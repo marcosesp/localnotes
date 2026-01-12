@@ -152,5 +152,20 @@ area.
 
 Esto elimina tus cambios no guradados en archivo.txt y lo deja tal como estaba en el head.
 
+----
+create a new repository on the command line
+echo "# ex374" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:marcosesp/ex374.git
+git push -u origin main
+
+----
+push an existing repository from the command line
+git remote add origin git@github.com:marcosesp/ex374.git
+git branch -M main
+git push -u origin main
 
 
